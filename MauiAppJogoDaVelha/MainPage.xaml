@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppJogoDaVelha.MainPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0"> <!-- Pontos que se referem aos cantos do dispositivo -->
+            <GradientStop Color="Blue" Offset="0.3" />  <!-- Cor Azul e Offset indica onde a cor vai terminar -->
+            <GradientStop Color="Black" Offset="1.1" />     <!-- Cor Preta e Offset indica onde a cor vai terminar -->
+        </LinearGradientBrush> 
+    </ContentPage.Background>
+
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="80" />
+            <Setter Property="BorderWidth" Value="1" />
+            <Setter Property="BorderColor" Value="White" />
+            
+        </Style>
+    </ContentPage.Resources>
+
+    <!-- TargetType estila tudo que você escrever mas como esse aplicativo só tem uma tela vamos colorir os botões -->
+    <!-- CornerRadius Borda Arredondada do Botão -->
+    <!-- Definimos acima Cor de fundo, cor de texto, tamanho da fonte, largura de borda e cor da borda -->
+
+    <Grid RowDefinitions="*,*,*,*" 
+          ColumnDefinitions="*,*,*"
+          ColumnSpacing="10" RowSpacing="10" Margin="10">
+
+        <!-- Margin afastamento de todo elemento grid das beiradas do dispositivo, Columspacing espaçamento entre as colunas e rowspacing espaçamento entre as linhas -->
+
+
+        <!-- Grid Permite Montar estrutura de Tabela e RowDefinitions informa a quantidade de linhas no jogo da velha -->
+        <!-- *,*,*,* pois o Maui entende que ele deve criar 4 espaços verticias e dividir -->
+
+        <!-- Grid Row cria os botões para linha 1 coluna 0, linha 1 coluna 1 e assim por diante -->
+        
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="Jogo da Velha" />
+        
+        <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked" />  <!-- x:Name para endereçar parte gráfica para chamar la no.cs -->
+        <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" Clicked="Button_Clicked" />
+        <Button x:Name="btn12" Grid.Row="1" Grid.Column="2" Clicked="Button_Clicked" />
+
+        <Button x:Name="btn20" Grid.Row="2" Grid.Column="0" Clicked="Button_Clicked" />
+        <Button x:Name="btn21" Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked" />
+        <Button x:Name="btn22" Grid.Row="2" Grid.Column="2" Clicked="Button_Clicked" />
+
+        <Button x:Name="btn30" Grid.Row="3" Grid.Column="0" Clicked="Button_Clicked" />
+        <Button x:Name="btn31" Grid.Row="3" Grid.Column="1" Clicked="Button_Clicked" />
+        <Button x:Name="btn32" Grid.Row="3" Grid.Column="2" Clicked="Button_Clicked" />
+
+
+
+
+    </Grid>
+
+</ContentPage>
